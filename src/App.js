@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import styles from './App.module.css';
+
 function App() {
     const [loading, setLoading] = useState(true);
     const [coins, setCoins] = useState([]);
@@ -32,7 +34,8 @@ function App() {
 
     return (
         <div>
-            <h1> The Coins! ({coins.length}) </h1>
+            <h1> Coins Listed: {loading? "" : coins.length + " Coins Found!"} </h1>
+            <p>database: <a href='https://api.coinpaprika.com/v1/tickers'>Coin Paprika</a></p>
             <hr />
             <h3>{
                 loading ? "Loading...":
@@ -64,7 +67,7 @@ function App() {
                 </form>
             </div>
 
-            <h2> With ${asset}, I can buy {name} x "{asset > 0 && price !== 0 ? (asset / price).toFixed(5) : 0}" </h2>
+            <h2> With ${asset}, you can purchase: {name} --- "{asset > 0 && price !== 0 ? (asset / price).toFixed(5) : 0}" </h2>
         </div>
     );
 }
