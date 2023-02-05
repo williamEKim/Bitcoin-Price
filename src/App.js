@@ -1,7 +1,4 @@
-import Button from './Button';
 import { useState, useEffect } from 'react';
-
-import styles from './App.module.css';
 
 function App() {
     const [loading, setLoading] = useState(true);
